@@ -9,8 +9,8 @@ import { CapitalizePipe } from './shared/capitalize.pipe';
 import { HighlightDirective } from './shared/highlight.directive';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login_route', pathMatch: 'full' },
+  { path: 'login_route', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '**', component: LoginComponent },
 ];
@@ -18,7 +18,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [LoginComponent, HomeComponent, CapitalizePipe, HighlightDirective],
   imports: [
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes),
     FormsModule,
     CommonModule,
     HttpClientModule,

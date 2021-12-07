@@ -10,7 +10,7 @@ export class LoginService {
 
   login({ username, password }: { username: string; password: string }) {
     return lastValueFrom(
-      this.http.post('http://localhost:3000/login', {
+      this.http.post('/login', {
         username,
         password,
       })
