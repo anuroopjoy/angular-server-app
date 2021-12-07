@@ -27,7 +27,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require("path").join(__dirname, "./coverage/angular-docker-app"),
+      dir: require("path").join(__dirname, "./coverage/angular-ssr-app"),
       subdir: ".",
       reporters: [{ type: "html" }, { type: "text-summary" }],
     },

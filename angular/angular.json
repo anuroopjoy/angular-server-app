@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-docker-app": {
+    "angular-ssr-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-docker-app",
+            "outputPath": "dist/angular-ssr-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-docker-app:build:production"
+              "browserTarget": "angular-ssr-app:build:production"
             },
             "development": {
-              "browserTarget": "angular-docker-app:build:development"
+              "browserTarget": "angular-ssr-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-docker-app:build"
+            "browserTarget": "angular-ssr-app:build"
           }
         },
         "test": {
@@ -116,7 +116,7 @@
       }
     }
   },
-  "defaultProject": "angular-docker-app",
+  "defaultProject": "angular-ssr-app",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
