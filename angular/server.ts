@@ -32,14 +32,8 @@ export function app(): express.Express {
 
   // Example Express Rest API endpoints
   server.use(
-    '/login',
-    createProxyMiddleware('/login', {
-      target: 'http://localhost:3001',
-    })
-  );
-  server.use(
-    '/cities',
-    createProxyMiddleware('/cities', {
+    '/api/**',
+    createProxyMiddleware('/api', {
       target: 'http://localhost:3001',
     })
   );

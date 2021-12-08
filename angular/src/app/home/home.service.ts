@@ -11,6 +11,6 @@ export class HomeService {
   }
 
   getCities() {
-    return lastValueFrom(this.http.get('/cities'));
+    return lastValueFrom(this.http.get('/api/cities'));
   }
 }
