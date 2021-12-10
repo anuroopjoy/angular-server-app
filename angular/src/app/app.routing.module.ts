@@ -9,8 +9,8 @@ import { CapitalizePipe } from './shared/capitalize.pipe';
 import { HighlightDirective } from './shared/highlight.directive';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login_route', pathMatch: 'full' },
-  { path: 'login_route', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '**', component: LoginComponent },
 ];

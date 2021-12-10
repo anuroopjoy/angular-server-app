@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { LoginService } from './login.service';
 
 @Component({
@@ -11,7 +12,19 @@ export class LoginComponent {
   username = '';
   password = '';
   errorMessage = '';
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    console.log(platformId);
+    if (isPlatformBrowser(platformId)) {
+      console.log('Browser Only');
+    }
+    if (isPlatformServer(platformId)) {
+      console.log('Server Only');
+    }
+  }
 
   async login() {
     if (!(!!this.username && !!this.password)) {
